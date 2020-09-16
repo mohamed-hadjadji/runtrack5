@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MyEntrepriseController!{% endblock %}
+
+{% block body %}
+
+
+<div class="projets">
+   {% for projet in projets %}
+	   <article>
+
+	       <h2>{{ projet.title }}</h2>
+	       <div class="metadata"> Créer le {{ projet.createdAt | date('d/m/Y') }} à {{ projet.createdAt | date('H:i') }}</div>
+	       <img src="{{ projet.image }}">
+	       <p>{{ projet.content | raw }}</p>
+	       
+	   </article>
+	{% endfor %}
+</div>
+{% endblock %}
